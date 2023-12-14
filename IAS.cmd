@@ -1,22 +1,6 @@
 @setlocal DisableDelayedExpansion
 @echo off
 
-
-
-::============================================================================
-::
-::   IDM Activation Script (IAS)
-::
-::   Homepages: https://github.com/WindowsAddict/IDM-Activation-Script
-::              https://massgrave.dev/idm-activation-script
-::
-::       Email: windowsaddict@protonmail.com
-::
-::============================================================================
-
-
-
-
 :: Add custom name in IDM license info, prefer to write it in English and/or numeric in below line after = sign,
 set name=
 
@@ -239,16 +223,15 @@ echo:
 call :_color2 %_White% "               [3] Toggle Windows Firewall  " %_col% "[%_status%]"
 echo:               _____________________________________________   
 echo:                                                               
-echo:               [4] ReadMe                                      
-echo:               [5] Exit                                        
+echo:               [4] Exit                            
+echo:                                                      
 echo:            ___________________________________________________
 echo:         
-call :_color2 %_White% "             " %_Green% "Enter a menu option in the Keyboard [1,2,3,4,5]"
+call :_color2 %_White% "             " %_Green% "Enter a menu option in the Keyboard [1,2,3,4]"
 choice /C:12345 /N
 set _erl=%errorlevel%
 
-if %_erl%==5 exit /b
-if %_erl%==4 start https://github.com/WindowsAddict/IDM-Activation-Script & start https://massgrave.dev/idm-activation-script & goto MainMenu
+if %_erl%==4 exit /b
 if %_erl%==3 call :_tog_Firewall&goto MainMenu
 if %_erl%==2 goto _reset
 if %_erl%==1 goto _activate
